@@ -31,7 +31,7 @@ $ docker build -t ubuntu_sshd .
 Then run it. You can then use `docker port` to find out what host port the container’s port 22 is mapped to:
 
 ```ssh
-$ docker run -d -P --name test_sshd eg_sshd
+$ docker run -d -P --name test_sshd ubuntu_sshd
 $ docker port test_sshd 22
 
 0.0.0.0:49154
@@ -57,6 +57,6 @@ Finally, clean up after your test by stopping and removing the container, and th
 ```ssh
 $ docker container stop test_sshd
 $ docker container rm test_sshd
-$ docker image rm eg_sshd
+$ docker image rm ubuntu_sshd
 ```
 
